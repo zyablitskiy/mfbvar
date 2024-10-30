@@ -217,14 +217,14 @@ mcmc_sampler.mfbvar_minn_fsv <- function(x, ...){
                      n_q = n_q, T_b_ = T_b-n_lags, n_lags = n_lags,
                      n_vars = n_vars, n_T_ = n_T_, n_fcst = n_fcst,
                      n_thin = n_thin, verbose = verbose,
-                     init = list(init_Pi = Pi[,, n_reps/n_thin],
-                                 init_Z = Z[,, n_reps/n_thin],
-                                 init_mu = mu[, n_reps/n_thin],
-                                 init_phi = phi[, n_reps/n_thin],
-                                 init_sigma = sigma[, n_reps/n_thin],
-                                 init_facload = facload[,,n_reps/n_thin],
-                                 init_f = f[,,n_reps/n_thin],
-                                 init_h = h[,,n_reps/n_thin]))
+                     init = list(init_Pi = init_Pi,
+                                 init_Z = init_Z,
+                                 init_mu = init_mu,
+                                 init_phi = init_phi,
+                                 init_sigma = init_sigma,
+                                 init_facload = init_facload,
+                                 init_f = init_f,
+                                 init_h = init_latent0))
 
   if (n_fcst > 0) {
     return_obj$Z_fcst <- Z_fcst
