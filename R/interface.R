@@ -815,7 +815,7 @@ estimate_mfbvar <- function(mfbvar_prior = NULL, prior, variance = "iw", ...) {
   time_out <- c(time_out, Sys.time())
   if (mfbvar_prior$verbose) {
     time_diff <- Sys.time() - time_out[1]
-    cat(paste0("\n   Total time elapsed: ", signif(time_diff, digits = 1), " ",
+    cat(paste0("\n   Total time elapsed: ", round(time_diff, digits = 1), " ",
                attr(time_diff, "units"), "\n"))
   }
 
