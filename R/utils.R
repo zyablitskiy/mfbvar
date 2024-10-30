@@ -3,7 +3,7 @@
 compute_error_variances <- function(Y) {
   n_vars <- ncol(Y)
   error_variance <- rep(NA, n_vars)
-  Y_arima <- lapply(Y, function(x) x)
+  Y_arima <- lapply(Y, identity)
   for (i in 1:n_vars) {
     success <- NULL
     init_order <- 4
