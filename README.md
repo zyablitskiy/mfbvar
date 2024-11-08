@@ -2,12 +2,10 @@
 mfbvar
 ======
 
-[![Build Status](https://travis-ci.org/ankargren/mfbvar.svg?branch=master)](https://travis-ci.org/ankargren/mfbvar) [![](http://www.r-pkg.org/badges/version/mfbvar)](https://www.r-pkg.org:443/pkg/mfbvar) [![Coverage status](https://codecov.io/gh/ankargren/mfbvar/branch/master/graph/badge.svg)](https://codecov.io/github/ankargren/mfbvar?branch=master)
-
 Overview
 --------
 
-The original `mfbvar` package implements Bayesian mixed-frequency VAR models. //
+The original `mfbvar` package implements Bayesian mixed-frequency VAR models. \\
 This fork fixes some bugs and implements some improvements.
 
 
