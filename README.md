@@ -7,7 +7,9 @@ mfbvar
 Overview
 --------
 
-The `mfbvar` package implements Bayesian mixed-frequency VAR models.
+The original `mfbvar` package implements Bayesian mixed-frequency VAR models.
+This fork fixes some bugs and implements some improvements.
+
 
 Installation
 ------------
@@ -15,10 +17,6 @@ Installation
 The current development version of the package can be installed with the help of `devtools`:
 
 ``` r
-devtools::install_github("ankargren/mfbvar")
+devtools::install_github("zyablitskiy/mfbvar")
 ```
 
-Usage
------
-
-See the vignette for details and examples.
