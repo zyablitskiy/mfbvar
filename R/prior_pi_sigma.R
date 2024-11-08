@@ -24,11 +24,16 @@ prior_Pi_Sigma <- function(lambda1, lambda2, prior_Pi_AR1, Y, n_lags, prior_nu) 
 
   prior_Pi_Omega <- rep(0, n_lags * n_vars)
   error_variance <- rep(NA, n_vars)
+  Y_arima <- lapply(Y, identity)
   for (i in 1:n_vars) {
     success <- NULL
     init_order <- 4
+    if (prior$freq[i]=="q") {Y_arima[[i]] <- na.omit(Y_arima[[i]][seq(which(!is.na(Y_arima[[i]]))[1], length(Y_arima[[i]]), 3)]})
     while(is.null(success)) {
-      error_variance[i] <- tryCatch(arima(na.omit(Y[,i]), order = c(init_order, 0, 0), method = "ML")$sigma2,
+      error_variance[i] <- tryCatch(arima(Y_arima[[i]], 
+                                          order = c(init_order, 0, 0), 
+                                          method = "ML", 
+                                          optim.method="L-BFGS-B")$sigma2,
                                  error = function(cond) NA)
       if (!is.na(error_variance[i])) {
         success <- 1
