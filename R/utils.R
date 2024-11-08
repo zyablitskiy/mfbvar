@@ -7,7 +7,7 @@ compute_error_variances <- function(Y) {
   for (i in 1:n_vars) {
     success <- NULL
     init_order <- 4
-    if (prior$freq[i]=="q") {Y_arima[[i]] <- na.omit(Y_arima[[i]][seq(which(!is.na(Y_arima[[i]]))[1], length(Y_arima[[i]]), 3)]})
+    if (prior$freq[i]=="q") {Y_arima[[i]] <- na.omit(Y_arima[[i]][seq(which(!is.na(Y_arima[[i]]))[1], length(Y_arima[[i]]), 3)])}
     for (ar_order in init_order:1) {
       error_variance[i] <- tryCatch(arima(Y_arima[[i]], 
                                           order = c(ar_order, 0, 0), 
