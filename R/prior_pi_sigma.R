@@ -28,7 +28,7 @@ prior_Pi_Sigma <- function(lambda1, lambda2, prior_Pi_AR1, Y, n_lags, prior_nu) 
   for (i in 1:n_vars) {
     success <- NULL
     init_order <- 4
-    if (prior$freq[i]=="q") {Y_arima[[i]] <- na.omit(Y_arima[[i]][seq(which(!is.na(Y_arima[[i]]))[1], length(Y_arima[[i]]), 3)]})
+    if (prior$freq[i]=="q") {Y_arima[[i]] <- na.omit(Y_arima[[i]][seq(which(!is.na(Y_arima[[i]]))[1], length(Y_arima[[i]]), 3)])}
     while(is.null(success)) {
       error_variance[i] <- tryCatch(arima(Y_arima[[i]], 
                                           order = c(init_order, 0, 0), 
