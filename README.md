@@ -7,7 +7,7 @@ mfbvar
 Overview
 --------
 
-The original `mfbvar` package implements Bayesian mixed-frequency VAR models.
+The original `mfbvar` package implements Bayesian mixed-frequency VAR models. //
 This fork fixes some bugs and implements some improvements.
 
 
