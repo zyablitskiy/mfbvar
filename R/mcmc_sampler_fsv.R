@@ -206,10 +206,10 @@ mcmc_sampler.mfbvar_minn_fsv <- function(x, ...){
   if (verbose) {
     cat("\n")
   }
-  dimnames(h) <- list(NULL, c(colnames(Z[,,1]), paste0("fac_", 1:n_fac)), NULL)
-  dimnames(facload) <- list(c(colnames(Z[,,1]), paste0("fac_", 1:n_fac)), NULL, NULL)
-  rownames(mu) <- colnames(Z[,,1])
-  rownames(phi) <- rownames(sigma) <- c(colnames(Z[,,1]), paste0("fac_", 1:n_fac))
+  dimnames(h) <- list(NULL, c(colnames(Z), paste0("fac_", 1:n_fac)), NULL)
+  dimnames(facload) <- list(c(colnames(Z), paste0("fac_", 1:n_fac)), NULL, NULL)
+  rownames(mu) <- colnames(Z)
+  rownames(phi) <- rownames(sigma) <- c(colnames(Z), paste0("fac_", 1:n_fac))
   return_obj <- list(Pi = Pi, Z = Z, Z_fcst = NULL, mu = mu, phi = phi,
                      sigma = sigma, f = f, facload = facload, h = h,
                      Lambda_ = Lambda_, aggregation = x$aggregation, prior_Pi_Omega = prior_Pi_Omega,
